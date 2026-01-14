@@ -1,0 +1,17 @@
+[
+    {
+        "platform": "小红书",
+        "handle": "@yourhandle",
+        "url": "https://www.xiaohongshu.com/"
+    },
+    {
+        "platform": "Instagram",
+        "handle": "@yourhandle",
+        "url": "https://www.instagram.com/"
+    },
+    {
+        "platform": "LinkedIn",
+        "handle": "Your Name",
+        "url": "https://www.linkedin.com/"
+    }
+]

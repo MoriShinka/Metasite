@@ -1,0 +1,25 @@
+{
+  "name": "ai-pm-portfolio",
+  "version": "1.0.0",
+  "description": "AI Product Manager Portfolio Website - LANCH Style",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YukiMeta/OnEarth.git"
+  },
+  "keywords": ["portfolio", "ai", "product-manager"],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/YukiMeta/OnEarth/issues"
+  },
+  "homepage": "https://github.com/YukiMeta/OnEarth#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}

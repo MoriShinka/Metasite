@@ -1,0 +1,179 @@
+/* Animations - LANCH Style Smooth Transitions */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn var(--transition-smooth) var(--ease-out) forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp var(--transition-smooth) var(--ease-out) forwards;
+}
+
+.slide-up {
+    animation: slideUp var(--transition-smooth) var(--ease-out) forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft var(--transition-smooth) var(--ease-out) forwards;
+}
+
+/* Stagger Animation Delays */
+.fade-in-up:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.fade-in-up:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.fade-in-up:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+.fade-in-up:nth-child(4) {
+    animation-delay: 300ms;
+}
+
+.fade-in-up:nth-child(5) {
+    animation-delay: 400ms;
+}
+
+.fade-in-up:nth-child(6) {
+    animation-delay: 500ms;
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-smooth) var(--ease-out),
+        transform var(--transition-smooth) var(--ease-out);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover Animations */
+.hover-lift {
+    transition: transform var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+.hover-scale {
+    transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Loading State */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--color-border-light) 25%,
+            var(--color-bg) 50%,
+            var(--color-border-light) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Smooth Scroll Behavior */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Respect User's Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
