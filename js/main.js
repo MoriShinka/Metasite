@@ -5,10 +5,14 @@ import { initScrollObserver } from './scrollObserver.js';
 import { initWorksManager } from './worksManager.js';
 import { initAnalytics } from './analytics.js';
 import { loadContent } from './contentLoader.js';
+import { initLanguage } from './language.js';
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('🚀 Initializing AI PM Portfolio...');
+
+    // Initialize language system first
+    initLanguage();
 
     // Load content data
     await loadContent();

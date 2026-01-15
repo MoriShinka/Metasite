@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Product Manager | Portfolio</title>
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="AI Product Manager专注于LLM应用、增长策略和0-1产品创新。探索我的作品集、文章和AI产品思考。">
   <meta name="keywords" content="AI Product Manager, LLM, AI应用, 产品经理, Portfolio">
-  
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI Product Manager | Portfolio">
   <meta property="og:description" content="AI Product Manager专注于LLM应用、增长策略和0-1产品创新">
   <meta property="og:image" content="/og-image.jpg">
   <meta property="og:locale" content="zh_CN">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Product Manager | Portfolio">
   <meta name="twitter:description" content="AI Product Manager专注于LLM应用、增长策略和0-1产品创新">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/tokens.css">
   <link rel="stylesheet" href="/styles/base.css">
@@ -36,59 +39,72 @@
   <link rel="stylesheet" href="/styles/components.css">
   <link rel="stylesheet" href="/styles/animations.css">
 </head>
+
 <body>
   <!-- Left Sidebar Navigation -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-inner">
       <!-- Personal Brand -->
       <div class="sidebar-brand">
-        <h1 class="brand-name">Your Name</h1>
-        <p class="brand-title">AI Product Manager</p>
+        <h1 class="brand-name">Yuki</h1>
+        <p class="brand-title" data-i18n="brand_title">Product Manager</p>
       </div>
-      
+
       <!-- Navigation Tabs -->
       <nav class="sidebar-nav" id="sidebarNav">
         <a href="#intro" class="nav-tab active" data-section="intro">
           <span class="nav-number">01</span>
-          <span class="nav-label">个人介绍</span>
+          <span class="nav-label" data-i18n="nav_intro">个人介绍</span>
         </a>
         <a href="#works" class="nav-tab" data-section="works">
           <span class="nav-number">02</span>
-          <span class="nav-label">作品展示</span>
+          <span class="nav-label" data-i18n="nav_works">作品展示</span>
         </a>
         <a href="#blog" class="nav-tab" data-section="blog">
           <span class="nav-number">03</span>
-          <span class="nav-label">媒体关联</span>
+          <span class="nav-label" data-i18n="nav_blog">媒体关联</span>
         </a>
       </nav>
-      
+
+      <!-- Language Toggle -->
+      <div class="language-toggle">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <span class="lang-separator">/</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+
       <!-- Contact CTA -->
       <div class="sidebar-cta">
         <a href="mailto:your@email.com" class="cta-link">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M3 4h14a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M2 5l8 6 8-6" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 4h14a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="currentColor"
+              stroke-width="1.5" />
+            <path d="M2 5l8 6 8-6" stroke="currentColor" stroke-width="1.5" />
           </svg>
-          <span>Email</span>
+          <span data-i18n="cta_email">Email</span>
         </a>
         <a href="/resume.pdf" class="cta-link" download>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M6 2h8l4 4v11a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M14 2v4h4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 2h8l4 4v11a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1h3z" stroke="currentColor"
+              stroke-width="1.5" />
+            <path d="M14 2v4h4" stroke="currentColor" stroke-width="1.5" />
           </svg>
-          <span>Resume</span>
+          <span data-i18n="cta_resume">Resume</span>
         </a>
         <button class="cta-link" id="wechatBtn">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M13.5 8.5c2.485 0 4.5 1.79 4.5 4s-2.015 4-4.5 4c-.414 0-.814-.05-1.193-.143L10 18l.5-2.857C8.567 14.429 7.5 13.07 7.5 11.5c0-2.21 2.015-4 4.5-4z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M7 3.5C7 5.433 5.433 7 3.5 7S0 5.433 0 3.5 1.567 0 3.5 0 7 1.567 7 3.5z" transform="translate(3.5 3)" stroke="currentColor" stroke-width="1.5"/>
+            <path
+              d="M13.5 8.5c2.485 0 4.5 1.79 4.5 4s-2.015 4-4.5 4c-.414 0-.814-.05-1.193-.143L10 18l.5-2.857C8.567 14.429 7.5 13.07 7.5 11.5c0-2.21 2.015-4 4.5-4z"
+              stroke="currentColor" stroke-width="1.5" />
+            <path d="M7 3.5C7 5.433 5.433 7 3.5 7S0 5.433 0 3.5 1.567 0 3.5 0 7 1.567 7 3.5z"
+              transform="translate(3.5 3)" stroke="currentColor" stroke-width="1.5" />
           </svg>
-          <span>WeChat</span>
+          <span data-i18n="cta_wechat">WeChat</span>
         </button>
       </div>
     </div>
   </aside>
-  
+
   <!-- Main Content Area -->
   <main class="main-content" id="mainContent">
     <!-- Section 01: Personal Introduction -->
@@ -96,54 +112,36 @@
       <div class="section-inner">
         <div class="section-header fade-in">
           <span class="section-number">01</span>
-          <h2 class="section-title">个人介绍</h2>
+          <h2 class="section-title" data-i18n="intro_title">个人介绍</h2>
         </div>
-        
+
         <div class="intro-content fade-in-up">
           <div class="intro-text">
-            <p class="intro-lead">
-              我是一名专注于AI产品的Product Manager，<br>
-              致力于将LLM技术转化为真正有价值的用户体验。
-            </p>
-            
-            <div class="intro-body">
+            <div class="intro-body" data-i18n="intro_content">
               <p>
-                在过去的几年里，我深度参与了多个AI产品从0到1的构建过程，
-                涵盖LLM应用、Agent系统、RAG架构等前沿领域。
-                我相信好的产品不仅需要技术创新，更需要对用户需求的深刻理解。
+                彭誉（Yuki），世界经济论坛全球杰出青年，毕业于北京大学光华管理学院与中国人民大学商学院。她曾获北京市优秀毕业生、北大五四奖学金、国家奖学金、北京大学优秀学生干部等荣誉，并长期在校园与公共参与中承担组织与领导角色：主办北大美学集市、光华新年晚会、人大校歌赛等大型活动；担任光华网球队队长期间，带领新成立的队伍一年内跻身校内三强。对她而言，优秀并非偶然，而是持续自我驱动下的秩序与行动力。
               </p>
-              
-              <p>
-                我的工作横跨B端和C端，从增长策略到产品设计，
-                从用户研究到数据分析。我享受在复杂问题中寻找简洁解决方案的过程，
-                也热衷于通过文字分享我的思考和实践。
+
+              <p>她将"全球化"视为一条贯穿成长的主线。入选北大—巴政"全球治理人才塑造力提升项目"后，Yuki 前往巴黎参访 UNESCO 总部，并在巴黎政治学院课堂中聆听前 UNESCO
+                总干事伊琳娜·博科娃女士分享其职业历程与地缘政治实践。这段经历让她真正理解：国际视野并非观光式见闻，而是面对差异时的包容、谦逊与主动选择。此后她积极申请世界经济论坛全球杰出青年，并在施瓦布教授来北大演讲期间主动交流，将对国际议题的热情延伸为持续的公共参与。
               </p>
-            </div>
-            
-            <div class="intro-highlights">
-              <h3>专注领域</h3>
-              <ul class="highlight-list">
-                <li>LLM应用产品设计与落地</li>
-                <li>AI Agent系统架构</li>
-                <li>0-1产品创新与增长</li>
-                <li>B端SaaS产品策略</li>
-              </ul>
-            </div>
-            
-            <div class="intro-highlights">
-              <h3>职业亮点</h3>
-              <ul class="highlight-list">
-                <li>主导多个AI产品从概念到上线的全流程</li>
-                <li>成功推动产品月活增长300%+</li>
-                <li>建立跨职能团队协作机制，提升交付效率</li>
-                <li>在AI产品社区发表多篇深度文章</li>
-              </ul>
+
+              <p>在校外，她发起公益项目「SheShapes
+                Impact」，聚焦国际组织与社会企业方向的职业路径与影响力；组织「全球好物市集」与青年发展论坛，围绕"一带一路"倡议下中国青年"走出去"与"引进来"展开讨论。她相信全球化的意义不止于"看见世界"，更在于让世界看见中国——理解规则，更要参与塑造规则。
+              </p>
+
+              <p>职业选择上，她曾在咨询、PE/VC 与初创公司多线探索，获得 MBB 战略咨询顾问 offer。出于对科技前沿的长期好奇，她最终选择加入全球前五手机硬件公司 OPPO，任 CEO
+                办公室助理，参与用户调研与创始人日常会议体系，沉淀对战略、产品与品牌的第一手理解，并获评公司优秀校招生。2025 年中旬，她转向 AI
+                产品经理方向，开始聚焦视觉与记忆的"压缩"——让世界更高效地被感知、被存储与被调用。</p>
+
+              <p>她相信，真正的产品不是功能堆砌，而是价值观的外化；真正的国际化也不是地理跨度，而是心智上的开放与连接。未来，她希望在全球化与 AI
+                交汇的浪潮中持续探索，用产品降低跨文化、跨信息结构的沟通成本，让个人与组织在更大的世界里拥有更清晰的目标、更稳健的行动与更自由的选择。</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    
+
     <!-- Section 02: Works -->
     <section class="content-section" id="works" data-section="works">
       <div class="section-inner">
@@ -151,7 +149,7 @@
           <span class="section-number">02</span>
           <h2 class="section-title">作品展示</h2>
         </div>
-        
+
         <!-- Filter Controls -->
         <div class="works-filter fade-in">
           <button class="filter-btn active" data-filter="all">全部</button>
@@ -161,19 +159,19 @@
           <button class="filter-btn" data-filter="growth">Growth</button>
           <button class="filter-btn" data-filter="b2b">ToB</button>
         </div>
-        
+
         <!-- Projects Grid -->
         <div class="works-grid" id="worksGrid">
           <!-- Projects will be dynamically loaded -->
         </div>
-        
+
         <!-- Project Detail Modal -->
         <div class="project-modal" id="projectModal">
           <div class="modal-overlay"></div>
           <div class="modal-content">
             <button class="modal-close" id="modalClose">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/>
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" />
               </svg>
             </button>
             <div class="modal-body" id="modalBody">
@@ -183,7 +181,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Section 03: Blog & Media -->
     <section class="content-section" id="blog" data-section="blog">
       <div class="section-inner">
@@ -191,7 +189,7 @@
           <span class="section-number">03</span>
           <h2 class="section-title">媒体关联</h2>
         </div>
-        
+
         <!-- Featured Articles -->
         <div class="blog-featured">
           <h3 class="subsection-title fade-in">经典文章</h3>
@@ -209,11 +207,11 @@
               <a href="#" class="article-link" target="_blank">
                 阅读全文
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
                 </svg>
               </a>
             </article>
-            
+
             <article class="featured-article fade-in-up">
               <h4 class="article-title">光华故事集 _ 彭誉：须信百年俱是梦，天地阔，且徜徉</h4>
               <p class="article-excerpt">
@@ -227,11 +225,11 @@
               <a href="#" class="article-link" target="_blank">
                 阅读全文
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
                 </svg>
               </a>
             </article>
-            
+
             <article class="featured-article fade-in-up">
               <h4 class="article-title">Reflection _ "一二·九"的陈年幕后日记</h4>
               <p class="article-excerpt">
@@ -244,11 +242,11 @@
               <a href="#" class="article-link" target="_blank">
                 阅读全文
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
                 </svg>
               </a>
             </article>
-            
+
             <article class="featured-article fade-in-up">
               <h4 class="article-title">Reflection _ 放弃的借口千千万万，坚持只需一个喜欢</h4>
               <p class="article-excerpt">
@@ -262,13 +260,13 @@
               <a href="#" class="article-link" target="_blank">
                 阅读全文
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
                 </svg>
               </a>
             </article>
           </div>
         </div>
-        
+
         <!-- AI Thoughts -->
         <div class="blog-thoughts">
           <h3 class="subsection-title fade-in">AI随想</h3>
@@ -276,7 +274,7 @@
             <!-- Thoughts will be dynamically loaded -->
           </div>
         </div>
-        
+
         <!-- Social Media Links -->
         <div class="blog-social">
           <h3 class="subsection-title fade-in">社交媒体</h3>
@@ -284,9 +282,9 @@
             <a href="#" class="social-link fade-in-up" target="_blank">
               <div class="social-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5"/>
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
                 </svg>
               </div>
               <div class="social-info">
@@ -294,16 +292,16 @@
                 <span class="social-handle">@yourhandle</span>
               </div>
               <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 13l10-10M13 3v10M13 3H3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 13l10-10M13 3v10M13 3H3" stroke="currentColor" stroke-width="1.5" />
               </svg>
             </a>
-            
+
             <a href="#" class="social-link fade-in-up" target="_blank">
               <div class="social-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5"/>
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
                 </svg>
               </div>
               <div class="social-info">
@@ -311,15 +309,16 @@
                 <span class="social-handle">@yourhandle</span>
               </div>
               <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 13l10-10M13 3v10M13 3H3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 13l10-10M13 3v10M13 3H3" stroke="currentColor" stroke-width="1.5" />
               </svg>
             </a>
-            
+
             <a href="#" class="social-link fade-in-up" target="_blank">
               <div class="social-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.5"/>
-                  <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                    stroke="currentColor" stroke-width="1.5" />
+                  <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5" />
                 </svg>
               </div>
               <div class="social-info">
@@ -327,7 +326,7 @@
                 <span class="social-handle">Your Name</span>
               </div>
               <svg class="social-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 13l10-10M13 3v10M13 3H3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 13l10-10M13 3v10M13 3H3" stroke="currentColor" stroke-width="1.5" />
               </svg>
             </a>
           </div>
@@ -335,14 +334,14 @@
       </div>
     </section>
   </main>
-  
+
   <!-- WeChat QR Modal -->
   <div class="wechat-modal" id="wechatModal">
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <button class="modal-close" id="wechatClose">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/>
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" />
         </svg>
       </button>
       <div class="wechat-qr">
@@ -354,8 +353,9 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Scripts -->
   <script type="module" src="/js/main.js"></script>
 </body>
+
 </html>

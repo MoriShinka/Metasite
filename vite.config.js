@@ -5,6 +5,9 @@ export default defineConfig({
     port: 3000,
     open: true
   },
+  optimizeDeps: {
+    entries: ['index.html']
+  },
   build: {
     outDir: 'dist',
     minify: 'terser',

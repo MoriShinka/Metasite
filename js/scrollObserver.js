@@ -10,25 +10,35 @@ let scrollTimeout;
 export function initScrollObserver() {
     const sections = document.querySelectorAll('.content-section');
 
-    // Intersection Observer for section detection
+    // Intersection Observer for section detection - More responsive
     const observerOptions = {
         root: null,
-        rootMargin: '-40% 0px -40% 0px', // Trigger when section is 40-60% in viewport
-        threshold: 0
+        rootMargin: '-20% 0px -60% 0px', // Trigger when section enters top 20% of viewport
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !isScrolling) {
-                const sectionId = entry.target.id;
-                const currentSection = getActiveSection();
+        // Find the section with the highest intersection ratio
+        let mostVisibleSection = null;
+        let highestRatio = 0;
 
-                if (sectionId !== currentSection) {
-                    setActiveTab(sectionId);
-                    trackEvent('scroll_tab_switch', { section: sectionId });
-                }
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
+                highestRatio = entry.intersectionRatio;
+                mostVisibleSection = entry.target;
             }
         });
+
+        // Update tab if we found a visible section
+        if (mostVisibleSection && !isScrolling) {
+            const sectionId = mostVisibleSection.id;
+            const currentSection = getActiveSection();
+
+            if (sectionId !== currentSection) {
+                setActiveTab(sectionId);
+                trackEvent('scroll_tab_switch', { section: sectionId });
+            }
+        }
     }, observerOptions);
 
     sections.forEach(section => observer.observe(section));
