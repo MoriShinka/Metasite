@@ -368,14 +368,14 @@
 /* Featured Articles - Clean List */
 .featured-articles {
     display: grid;
-    gap: var(--space-8);
+    gap: var(--space-12);
 }
 
 .featured-article {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    padding-bottom: var(--space-8);
+    gap: var(--space-6);
+    padding-bottom: var(--space-12);
     border-bottom: var(--border-dotted);
 }
 
@@ -384,17 +384,45 @@
     padding-bottom: 0;
 }
 
-.article-title {
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
-    line-height: var(--leading-tight);
-    color: var(--color-text-primary);
+/* Article Header */
+.article-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
 }
 
-.article-excerpt {
-    font-size: var(--text-base);
-    line-height: var(--leading-relaxed);
-    color: var(--color-text-secondary);
+/* Article Hero Image - Vibrant Impressionist */
+.article-hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    margin-bottom: var(--space-6);
+    background-color: var(--color-bg-secondary);
+}
+
+.article-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* No filters - preserve vibrant colors */
+}
+
+/* Section Hero Image - For Media Articles */
+.section-hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    margin: var(--space-6) 0 var(--space-10) 0;
+    background-color: var(--color-bg-secondary);
+}
+
+.section-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* No filters - preserve vibrant colors */
 }
 
 .article-meta {
@@ -402,6 +430,74 @@
     gap: var(--space-4);
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
+}
+
+.article-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    letter-spacing: var(--tracking-wide);
+}
+
+.article-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-text-primary);
+    letter-spacing: var(--tracking-tight);
+}
+
+/* Article Content - Long-form Typography */
+.article-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.article-lead {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-primary);
+    font-weight: var(--font-regular);
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-accent);
+}
+
+.article-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+}
+
+.article-section h5 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+    letter-spacing: var(--tracking-tight);
+}
+
+.article-section p {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.article-conclusion {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-primary);
+    font-weight: var(--font-medium);
+    font-style: italic;
+    margin-top: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: var(--border-dotted);
+}
+
+.article-excerpt {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
 }
 
 .article-link {
@@ -417,6 +513,80 @@
 
 .article-link:hover {
     opacity: 0.6;
+}
+
+/* Media Articles - Simpler Layout with Background Images */
+.media-articles {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.media-article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-6);
+    background-color: var(--color-bg);
+    border: var(--border-dotted);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+/* Background Image for Media Articles */
+.media-article::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/media_landscape_vibrant_1768580214891.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    transition: opacity var(--transition-base);
+    z-index: 0;
+}
+
+.media-article:hover::before {
+    opacity: 0.15;
+}
+
+.media-article:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+/* Ensure content is above background */
+.media-article>* {
+    position: relative;
+    z-index: 1;
+}
+
+.media-article .article-title {
+    font-size: var(--text-xl);
+    transition: color var(--transition-base);
+}
+
+.media-article:hover .article-title {
+    color: var(--color-accent);
+}
+
+.media-article .article-excerpt {
+    font-size: var(--text-sm);
+}
+
+.media-article .article-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-accent);
+    transition: opacity var(--transition-base);
+}
+
+.media-article:hover .article-link {
+    opacity: 0.7;
 }
 
 /* Thoughts List - Minimal */

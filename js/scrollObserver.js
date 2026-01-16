@@ -9,11 +9,12 @@ let scrollTimeout;
 
 export function initScrollObserver() {
     const sections = document.querySelectorAll('.content-section');
+    const mainContent = document.getElementById('mainContent');
 
-    // Intersection Observer for section detection - More responsive
+    // Intersection Observer for section detection - Responsive
     const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -60% 0px', // Trigger when section enters top 20% of viewport
+        root: mainContent,
+        rootMargin: '-10% 0px -70% 0px', // Trigger when section enters top 10% of viewport
         threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
     };
 
@@ -29,8 +30,8 @@ export function initScrollObserver() {
             }
         });
 
-        // Update tab if we found a visible section
-        if (mostVisibleSection && !isScrolling) {
+        // Update tab immediately when section becomes visible
+        if (mostVisibleSection) {
             const sectionId = mostVisibleSection.id;
             const currentSection = getActiveSection();
 
@@ -44,8 +45,9 @@ export function initScrollObserver() {
     sections.forEach(section => observer.observe(section));
 
     // Light snap behavior on scroll end
-    window.addEventListener('scroll', throttle(handleScroll, 100));
+    mainContent.addEventListener('scroll', throttle(handleScroll, 100));
 }
+
 
 function handleScroll() {
     isScrolling = true;
@@ -61,16 +63,16 @@ function handleScroll() {
 }
 
 function applyLightSnap() {
+    const mainContent = document.getElementById('mainContent');
     const sections = document.querySelectorAll('.content-section');
-    const viewportHeight = window.innerHeight;
-    const scrollTop = window.pageYOffset;
+    const scrollTop = mainContent.scrollTop;
 
     let closestSection = null;
     let closestDistance = Infinity;
 
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        const sectionTop = rect.top + scrollTop;
+        const sectionTop = section.offsetTop;
         const distance = Math.abs(sectionTop - scrollTop);
 
         // Only snap if we're close to the top of a section (within 100px)
@@ -82,10 +84,10 @@ function applyLightSnap() {
 
     // Apply gentle snap if close enough
     if (closestSection && closestDistance < 80) {
-        const targetPosition = closestSection.getBoundingClientRect().top + scrollTop;
-        window.scrollTo({
-            top: targetPosition,
+        mainContent.scrollTo({
+            top: closestSection.offsetTop,
             behavior: 'smooth'
         });
     }
 }
+

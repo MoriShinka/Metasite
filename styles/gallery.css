@@ -1,0 +1,83 @@
+/* ===== Photo Gallery - Feishu Document Style ===== */
+
+/* Section Subtitle */
+.section-subtitle {
+    font-size: var(--text-base);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    margin-top: var(--space-2);
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Gallery Grid - Clean & Organized */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-10);
+}
+
+/* Gallery Item - Card Style */
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Gallery Image Container */
+.gallery-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--color-bg-secondary);
+    cursor: pointer;
+    transition: opacity var(--transition-base);
+}
+
+.gallery-image:hover {
+    opacity: 0.88;
+}
+
+/* Gallery Images - Premium Treatment */
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    /* Subtle filter for premium look */
+    filter: brightness(1.02) contrast(0.92) saturate(0.88);
+    transition: filter var(--transition-smooth);
+}
+
+.gallery-image:hover img {
+    filter: brightness(1.04) contrast(0.94) saturate(0.90);
+}
+
+/* Gallery Caption */
+.gallery-caption {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+    padding: 0 var(--space-1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: var(--space-6);
+    }
+}
+
+@media (max-width: 640px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .gallery-image {
+        aspect-ratio: 16 / 9;
+    }
+}
